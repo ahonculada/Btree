@@ -1,21 +1,22 @@
 # Btree
-Implementing Btree in C++
+Implementing Btree in C++  
 
-Following CLRS Chapter 18: pgs 485-504.
+Following CLRS Chapter 18: pgs 485-504.  
 
-Finished:
-	Create Tree
-	Create Node
-	Tree Insert
+Finished:  
+	Create Tree  
+	Create Node  
+	Tree Insert  
 
-In Progress:
-	Split Child
+In Progress:  
+	Split Child  
 
-TODO:
-	Insert Non-full tree
-	Delete
-	Search
-	Destroy Tree
+TODO:  
+	Insert Non-full tree  
+	Print  
+	Delete  
+	Search  
+	Destroy Tree  
 
-Reach:
-	Merge
+Reach:  
+	Merge  
