@@ -45,7 +45,20 @@ Btree::Btree(int y) {
 // 	2) Tree is not Full.
 // We must write function that splits tree if tree is full.
 
-//////////////////////////// Why split child argument is 1? ///////////////////////////////////////////
+void Split_Child(Btree_node *parent, int child_index, int min_degree) {
+	Btree_node* new_node = new Btree_node();
+	Btree_node* split_node = parent->children[child_index];
+	new_node->leaf = split_node->leaf;
+	new_node->num_keys = min_degree - 1; 
+	// Copy t children of y
+	for (int i = 1; i < min_degree-1; i++) {
+		new_node->keys.push_back(split_node->keys[min_degree+i]);
+	}
+//////////////////////////TODO/////////////////////////////////////////
+// finish split child
+// ////////////////////////
+}
+
 void Insert_Btree(Btree* T, int val) {
 	Btree_node* root = T->root;
 	if (root->num_keys == (2*T->min_degree+1)) {
@@ -54,7 +67,8 @@ void Insert_Btree(Btree* T, int val) {
 		new_node->leaf = false;
 		new_node->num_keys = 0;
 		new_node->children.push_back(root);
-		Split_Children(new_node, 1);
+		// Guarantee never recurse to full node.
+		Split_Child(new_node, 1, T->min_degree);
 		Insert_Nonfull_Btree(new_node, val);
 	} else 	Insert_Nonfull_Btree(root, val);
 }
